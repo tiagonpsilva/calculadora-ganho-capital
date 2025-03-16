@@ -1,7 +1,7 @@
 import json
 import sys
 
-class CapitalGainTaxCalculator:
+class CalculadoraGanhoCapital:
     """Classe para cálculo de imposto sobre ganho de capital em operações financeiras."""
     
     def __init__(self):
@@ -70,7 +70,7 @@ def process_file(file_path):
         with open(file_path, 'r') as f:
             operations = json.load(f)
         
-        calculadora = CapitalGainTaxCalculator()
+        calculadora = CalculadoraGanhoCapital()
         resultados = calculadora.calcular_impostos(operations)
         return resultados
     except FileNotFoundError:

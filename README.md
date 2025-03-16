@@ -16,7 +16,7 @@ Este programa implementa uma calculadora de impostos sobre ganhos de capital par
 ## Requisitos
 
 - Python 3.6 ou superior
-- Não há dependências externas
+
 
 ## Instalação
 
@@ -32,7 +32,7 @@ cd capital-gains
 Execute o programa através da linha de comando:
 
 ```bash
-python main.py
+python main.py operations-samples/[arquivo].json
 ```
 
 Você pode fornecer operações diretamente pela entrada padrão ou redirecionar um arquivo:
@@ -77,7 +77,7 @@ capital-gains/
 
 O projeto utiliza uma arquitetura simples e direta:
 
-1. `CapitalGainCalculator`: Classe principal que:
+1. `CalculadoraGanhoCapital`: Classe principal que:
    - Mantém o estado atual (preço médio, quantidade de ações, prejuízos acumulados)
    - Implementa a lógica de processamento de operações de compra e venda
    - Calcula o imposto de acordo com as regras de negócio
