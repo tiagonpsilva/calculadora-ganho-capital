@@ -1,6 +1,11 @@
 import unittest
 import json
 import os
+import sys
+
+# Adicionado para permitir importar o módulo principal
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from main import CalculadoraGanhoCapital, processar_arquivo
 
 class TestCalculadoraGanhoCapital(unittest.TestCase):
