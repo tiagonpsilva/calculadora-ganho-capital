@@ -1,10 +1,10 @@
-# Calculadora de Imposto sobre Ganho de Capital
+# 💰 Calculadora de Imposto sobre Ganho de Capital
 
-## Descrição
+## 📝 Descrição
 
 Este programa implementa uma calculadora de impostos sobre ganhos de capital para operações no mercado financeiro de ações. A aplicação recebe operações de compra e venda através da entrada padrão (stdin) em formato JSON e calcula o imposto a ser pago para cada operação, seguindo as regras estabelecidas.
 
-## Regras de Cálculo de Imposto
+## 📜 Regras de Cálculo de Imposto
 
 - O imposto é de 20% sobre o lucro obtido em operações de venda
 - O preço médio ponderado de compra é recalculado a cada nova operação de compra
@@ -13,21 +13,21 @@ Este programa implementa uma calculadora de impostos sobre ganhos de capital par
 - Operações de compra não geram impostos
 - Cada linha de entrada é processada independentemente
 
-## Requisitos
+## ⚙️ Requisitos
 
 - Python 3.6 ou superior
 
 
-## Instalação
+## 📥 Instalação
 
 Clone o repositório:
 
 ```bash
-git clone https://[url-do-repositorio]/capital-gains.git
-cd capital-gains
+git clone https://github.com/tiagonpsilva/calculadora-ganho-capital.git
+cd calculadora-ganho-capital
 ```
 
-## Uso
+## 🚀 Uso
 
 Execute o programa através da linha de comando:
 
@@ -41,7 +41,7 @@ Você pode fornecer operações diretamente pela entrada padrão ou redirecionar
 python3 main.py < input.txt
 ```
 
-### Formato de Entrada
+### ⌨️ Formato de Entrada
 
 Cada linha da entrada deve conter uma lista de operações em formato JSON:
 
@@ -54,7 +54,7 @@ Onde:
 - `unit-cost`: Preço unitário da ação
 - `quantity`: Quantidade de ações negociadas
 
-### Formato de Saída
+### 📤 Formato de Saída
 
 Para cada linha processada, o programa retorna uma lista JSON contendo o imposto calculado para cada operação:
 
@@ -62,7 +62,7 @@ Para cada linha processada, o programa retorna uma lista JSON contendo o imposto
 [{"tax": 0.0}, {"tax": 0.0}]
 ```
 
-## Casos de Teste
+## 🧪 Casos de Teste
 
 O projeto inclui arquivos JSON de exemplo na pasta `operations-samples/` que demonstram diferentes cenários conforme a especificação:
 
@@ -75,7 +75,7 @@ O projeto inclui arquivos JSON de exemplo na pasta `operations-samples/` que dem
 
 Cada arquivo segue o formato de entrada especificado e pode ser usado para testar a aplicação.
 
-## Estrutura do Projeto
+## 📁 Estrutura do Projeto
 
 ```
 capital-gains/
@@ -90,7 +90,7 @@ capital-gains/
 └── README.md       # Este arquivo
 ```
 
-## Arquitetura
+## 🏗️ Arquitetura
 
 O projeto utiliza uma arquitetura simples e direta:
 
@@ -104,7 +104,7 @@ O projeto utiliza uma arquitetura simples e direta:
    - Instancia o calculador para cada linha de entrada
    - Formata e imprime os resultados
 
-## Testes
+## ✅ Testes
 
 O projeto inclui testes unitários e de integração que cobrem todos os casos de uso especificados. Para executar os testes:
 
@@ -112,14 +112,14 @@ O projeto inclui testes unitários e de integração que cobrem todos os casos d
 python3 -m unittest discover tests
 ```
 
-## Decisões Técnicas
+## 🧠 Decisões Técnicas
 
 - **Uso da biblioteca padrão**: Optei por utilizar apenas a biblioteca padrão do Python para garantir portabilidade e simplicidade.
 - **Uso do módulo `decimal`**: Para garantir precisão nos cálculos financeiros, evitando problemas de arredondamento com pontos flutuantes.
 - **Separação de responsabilidades**: A lógica de cálculo foi isolada em uma classe dedicada, facilitando testes e manutenção.
 - **Imutabilidade do estado entre simulações**: Cada linha de entrada cria uma nova instância do calculador, garantindo que as simulações sejam independentes.
 
-## Tratamento de Casos Especiais
+## ⚠️ Tratamento de Casos Especiais
 
 - **Operações de valor zero**: Tratadas corretamente sem gerar exceções
 - **Arredondamento**: Todos os valores são arredondados para 2 casas decimais conforme especificado
