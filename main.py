@@ -1,5 +1,6 @@
 import json
 import sys
+import os 
 
 class CalculadoraGanhoCapital:
     """Classe para cálculo de imposto sobre ganho de capital em operações financeiras."""
@@ -60,16 +61,14 @@ class CalculadoraGanhoCapital:
         for operacao in operations:
             imposto = self.processar_operacao(operacao)
             resultados.append({"tax": imposto})
-        
         return resultados
 
 
-def process_file(file_path):
+def processar_arquivo(file_path):
     """Processa um único arquivo JSON de operações."""
     try:
         with open(file_path, 'r') as f:
             operations = json.load(f)
-        
         calculadora = CalculadoraGanhoCapital()
         resultados = calculadora.calcular_impostos(operations)
         return resultados
@@ -92,7 +91,7 @@ def main():
         return
     
     file_path = sys.argv[1]
-    resultados = process_file(file_path)
+    resultados = processar_arquivo(file_path)
     
     if resultados:
         print(json.dumps(resultados, indent=2))

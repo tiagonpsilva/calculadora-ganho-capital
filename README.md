@@ -32,13 +32,13 @@ cd capital-gains
 Execute o programa através da linha de comando:
 
 ```bash
-python main.py operations-samples/[arquivo].json
+python3 main.py operations-samples/[arquivo].json
 ```
 
 Você pode fornecer operações diretamente pela entrada padrão ou redirecionar um arquivo:
 
 ```bash
-python main.py < input.txt
+python3 main.py < input.txt
 ```
 
 ### Formato de Entrada
@@ -62,11 +62,28 @@ Para cada linha processada, o programa retorna uma lista JSON contendo o imposto
 [{"tax": 0.0}, {"tax": 0.0}]
 ```
 
+## Casos de Teste
+
+O projeto inclui arquivos JSON de exemplo na pasta `operations-samples/` que demonstram diferentes cenários conforme a especificação:
+
+1. `case1.json` - Operações de compra simples (não geram imposto)
+2. `case2.json` - Operações de venda com valor total ≤ R$ 20.000,00 (isentas de imposto)
+3. `case3.json` - Operações de venda com lucro e cálculo de imposto
+4. `case4.json` - Operações com prejuízo sendo compensado em lucros futuros
+5. `case5.json` - Sequência de operações com cálculo de preço médio e impostos
+6. `case6.json` - Operações complexas demonstrando todas as regras combinadas
+
+Cada arquivo segue o formato de entrada especificado e pode ser usado para testar a aplicação.
+
 ## Estrutura do Projeto
 
 ```
 capital-gains/
 ├── main.py         # Implementação principal da calculadora
+├── operations-samples/ # Arquivos JSON de exemplo para testes
+│   ├── case1.json
+│   ├── case2.json
+│   └── ...
 ├── tests/          # Testes unitários e de integração
 │   ├── test_calculator.py
 │   └── test_integration.py
@@ -92,7 +109,7 @@ O projeto utiliza uma arquitetura simples e direta:
 O projeto inclui testes unitários e de integração que cobrem todos os casos de uso especificados. Para executar os testes:
 
 ```bash
-python -m unittest discover tests
+python3 -m unittest discover tests
 ```
 
 ## Decisões Técnicas
