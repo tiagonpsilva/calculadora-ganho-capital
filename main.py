@@ -75,9 +75,6 @@ def processar_arquivo(file_path):
     except FileNotFoundError:
         print(f"Erro: Arquivo '{file_path}' não encontrado.")
         return None
-    except json.JSONDecodeError:
-        print(f"Erro: O arquivo '{file_path}' não contém um JSON válido.")
-        return None
     except Exception as e:
         print(f"Erro ao processar arquivo '{file_path}': {str(e)}")
         return None

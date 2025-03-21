@@ -112,13 +112,6 @@ O projeto inclui testes unitários e de integração que cobrem todos os casos d
 python3 -m unittest discover tests
 ```
 
-## 🧠 Decisões Técnicas
-
-- **Uso da biblioteca padrão**: Optei por utilizar apenas a biblioteca padrão do Python para garantir portabilidade e simplicidade.
-- **Uso do módulo `decimal`**: Para garantir precisão nos cálculos financeiros, evitando problemas de arredondamento com pontos flutuantes.
-- **Separação de responsabilidades**: A lógica de cálculo foi isolada em uma classe dedicada, facilitando testes e manutenção.
-- **Imutabilidade do estado entre simulações**: Cada linha de entrada cria uma nova instância do calculador, garantindo que as simulações sejam independentes.
-
 ## ⚠️ Tratamento de Casos Especiais
 
 - **Operações de valor zero**: Tratadas corretamente sem gerar exceções
