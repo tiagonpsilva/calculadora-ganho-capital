@@ -85,10 +85,9 @@ calculadora-ganho-capital/
 │   ├── case1.json
 │   ├── case2.json
 │   └── ...
-├── tests/                             # Testes unitários e de integração
-│   ├── test_calculator.py
-│   └── test_integration.py
-└── README.md                          # Este arquivo
+├── tests/                             # Testes
+│   ├── teste_calculadora.py
+└── README.md                         
 ```
 
 ## 🏗️ Arquitetura
@@ -112,7 +111,6 @@ O projeto inclui testes unitários e de integração que cobrem todos os casos d
 ```bash
 python3 -m unittest discover tests
 ```
-
 
 ## ⚠️ Tratamento de Casos Especiais
 
