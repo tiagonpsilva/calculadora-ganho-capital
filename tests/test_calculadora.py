@@ -2,11 +2,11 @@ import unittest
 import json
 import os
 import sys
+from CalculadoraGanhoCapital import CalculadoraGanhoCapital
 
 # Adicionado para permitir importar o módulo principal
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from main import CalculadoraGanhoCapital, processar_arquivo
 
 class TestCalculadoraGanhoCapital(unittest.TestCase):
     
@@ -78,7 +78,7 @@ class TestCalculadoraGanhoCapital(unittest.TestCase):
             json.dump(dados_teste, f)
         
         try:
-            resultados = processar_arquivo('operations-samples/test_case.json')
+            resultados = self.calculadora.processar_arquivo('operations-samples/test_case.json')
             resultados_esperados = [
                 {"tax": 0.00},
                 {"tax": 10000.00},

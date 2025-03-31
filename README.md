@@ -78,16 +78,17 @@ Cada arquivo segue o formato de entrada especificado e pode ser usado para testa
 ## 📁 Estrutura do Projeto
 
 ```
-capital-gains/
-├── main.py         # Implementação principal da calculadora
-├── operations-samples/ # Arquivos JSON de exemplo para testes
+calculadora-ganho-capital/
+├── main.py                            # Ponto de entrada do programa que processa a entrada/saída
+├── CalculadoraGanhoCapital.py         # Classe que implementa a lógica de cálculo de impostos
+├── operations-samples/                # Arquivos JSON de exemplo para testes
 │   ├── case1.json
 │   ├── case2.json
 │   └── ...
-├── tests/          # Testes unitários e de integração
+├── tests/                             # Testes unitários e de integração
 │   ├── test_calculator.py
 │   └── test_integration.py
-└── README.md       # Este arquivo
+└── README.md                          # Este arquivo
 ```
 
 ## 🏗️ Arquitetura
@@ -111,6 +112,7 @@ O projeto inclui testes unitários e de integração que cobrem todos os casos d
 ```bash
 python3 -m unittest discover tests
 ```
+
 
 ## ⚠️ Tratamento de Casos Especiais
 
