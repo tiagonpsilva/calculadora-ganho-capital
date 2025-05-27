@@ -44,7 +44,15 @@ class TestCalculadoraGanhoCapital(unittest.TestCase):
         self.calculadora.processar_compra(30.00, 1000)
         imposto = self.calculadora.processar_venda(20.00, 1000)  # Prejuízo: -10.000, Valor: 20.000
         self.assertEqual(imposto, 0.00)
-    
+
+    def test_quantidade_para_venda(self):
+        """Testa se tenho ações suficientes para vender."""
+        self.calculadora.processar_operacao({"operation": "buy", "unit-cost": 10.00, "quantity": 100})
+        with self.assertRaises(Exception):
+            self.calculadora.processar_operacao({"operation": "sell", "unit-cost": 10.00, "quantity": 200})
+            # Comentário 01
+            
+     
     def test_operacoes_sequenciais(self):
         """Testa uma sequência completa de operações."""
         operacoes = [
